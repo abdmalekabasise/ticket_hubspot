@@ -148,52 +148,140 @@ export const categorieMegaMenuItems = [
         menuItems: [
           {
             id: 1,
-            title: "Hotel List",
+            title: "",
             menuList: [
               {
-                name: "Hotel List v1",
-                routePath: "/hotel/hotel-list-v1",
+                name: "Arizona Diamondbacks",
+                routePath: "/categorie/Arizona Diamondbacks",
               },
               {
-                name: "Hotel List v2",
-                routePath: "/hotel/hotel-list-v2",
+                name: "Atlanta Braves",
+                routePath: "/categorie/Atlanta Braves",
               },
               {
-                name: "Hotel List v3",
-                routePath: "/hotel/hotel-list-v3",
+                name: "Baltimore Orioles",
+                routePath: "/categorie/Baltimore Orioles",
               },
               {
-                name: "Hotel List v4",
-                routePath: "/hotel/hotel-list-v4",
+                name: "Boston Red Sox",
+                routePath: "/categorie/Boston Red Sox",
               },
               {
-                name: "Hotel List v5",
-                routePath: "/hotel/hotel-list-v5",
+                name: "Chicago Cubs",
+                routePath: "/categorie/Chicago Cubs",
               },
+              {
+                name: "Chicago White Sox",
+                routePath: "/categorie/Chicago White Sox",
+              },
+              {
+                name: "Cincinnati Reds",
+                routePath: "/categorie/Cincinnati Reds",
+              },
+              {
+                name: "Cleveland Guardians",
+                routePath: "/categorie/Cleveland Guardians",
+              },
+              {
+                name: "Colorado Rockies",
+                routePath: "/categorie/Colorado Rockies",
+              },
+              {
+                name: "Detroit Tigers",
+                routePath: "/categorie/Detroit Tigers",
+              },
+
+
             ],
           },
           {
             id: 2,
-            title: "Hotel Single",
+            title: "",
             menuList: [
               {
-                name: "Hotel Single v1",
-                routePath: "/hotel/hotel-single-v1/5",
+                name: "Houston Astros",
+                routePath: "/categorie/Houston Astros",
               },
               {
-                name: "Hotel Single v2",
-                routePath: "/hotel/hotel-single-v2/3",
+                name: "Kansas City Royals",
+                routePath: "/categorie/Kansas City Royals",
               },
+              {
+                name: "Los Angeles Angels",
+                routePath: "/categorie/Los Angeles Angels",
+              },
+              {
+                name: "Los Angeles Dodgers",
+                routePath: "/categorie/Los Angeles Dodgers",
+              },
+              {
+                name: "Miami Marlins",
+                routePath: "/categorie/Miami Marlins",
+              },
+              {
+                name: "Milwaukee Brewers",
+                routePath: "/categorie/Milwaukee Brewers",
+              },
+              {
+                name: "Minnesota Twins",
+                routePath: "/categorie/Minnesota Twins",
+              },
+              {
+                name: "New York Mets",
+                routePath: "/categorie/New York Mets",
+              },
+              {
+                name: "Oakland Athletics",
+                routePath: "/categorie/Oakland Athletics",
+              },
+              {
+                name: "Philadelphia Phillies",
+                routePath: "/categorie/Philadelphia Phillies",
+              },
+
             ],
           },
           {
             id: 3,
-            title: "Hotel Booking",
+            title: "",
             menuList: [
               {
-                name: "Booking Page",
-                routePath: "/hotel/booking-page",
+                name: "Pittsburgh Pirates",
+                routePath: "/categorie/Pittsburgh Pirates",
               },
+              {
+                name: "San Diego Padres",
+                routePath: "/categorie/San Diego Padres",
+              },
+              {
+                name: "San Francisco Giants",
+                routePath: "/categorie/San Francisco Giants",
+              },
+              {
+                name: "Seattle Mariners",
+                routePath: "/categorie/Los Angeles Dodgers",
+              },
+              {
+                name: "St. Louis Cardinals",
+                routePath: "/categorie/St. Louis Cardinals",
+              },
+              {
+                name: "Tampa Bay Rays",
+                routePath: "/categorie/Tampa Bay Rays",
+              },
+              {
+                name: "Texas Rangers",
+                routePath: "/categorie/Texas Rangers",
+              },
+              {
+                name: "Toronto Blue Jays",
+                routePath: "/categorie/Toronto Blue Jays",
+              },
+              {
+                name: "Washington Nationals",
+                routePath: "/categorie/Washington Nationals",
+              },
+
             ],
           },
         ],
@@ -212,29 +300,139 @@ export const categorieMegaMenuItems = [
         menuItems: [
           {
             id: 1,
-            title: "Tour List",
+            title: "",
             menuList: [
               {
-                name: "Tour List v1",
-                routePath: "/tour/tour-list-v1",
+                name: "Atlanta United FC",
+                routePath: "/categorie/Atlanta United FC",
               },
               {
-                name: "Tour List v2",
-                routePath: "/tour/tour-list-v2",
+                name: "Austin FC",
+                routePath: "/categorie/Austin FC",
               },
+              {
+                name: "CF Montreal",
+                routePath: "/categorie/CF Montreal",
+              },
+              {
+                name: "Charlotte FC",
+                routePath: "/categorie/Charlotte FC",
+              },
+              {
+                name: "Chicago Fire FC",
+                routePath: "/categorie/Chicago Fire FC",
+              },
+              {
+                name: "Colorado Rapids",
+                routePath: "/categorie/Colorado Rapids",
+              },
+              {
+                name: "Columbus Crew",
+                routePath: "/categorie/Columbus Crew",
+              },
+              {
+                name: "D.C. United",
+                routePath: "/categorie/D.C. United",
+              },
+              {
+                name: "FC Cincinnati",
+                routePath: "/categorie/FC Cincinnati",
+              },
+              {
+                name: "FC Dallas",
+                routePath: "/categorie/Houston Dynamo FC",
+              },
+
             ],
           },
           {
             id: 2,
-            title: "Tour Pages",
+            title: "",
             menuList: [
+
               {
-                name: "Tour Map",
-                routePath: "/tour/tour-list-v3",
+                name: "Houston Dynamo FC",
+                routePath: "/categorie/Houston Dynamo FC",
               },
               {
-                name: "Tour Single",
-                routePath: "/tour/tour-single/5",
+                name: "Inter Miami CF",
+                routePath: "/categorie/Inter Miami CF",
+              },
+              {
+                name: "LA Galaxy",
+                routePath: "/categorie/LA Galaxy",
+              },
+              {
+                name: "Los Angeles Football Club",
+                routePath: "/categorie/Los Angeles Football Club",
+              },
+              {
+                name: "Minnesota United FC",
+                routePath: "/categorie/Minnesota United FC",
+              },
+              {
+                name: "Nashville SC",
+                routePath: "/categorie/Nashville SC",
+              },
+              {
+                name: "New England Revolution",
+                routePath: "/categorie/New England Revolution",
+              },
+              {
+                name: "New York City FC",
+                routePath: "/categorie/New York City FC",
+              },
+              {
+                name: "New York Red Bulls",
+                routePath: "/categorie/New York Red Bulls",
+              },
+              {
+                name: "Orlando City SC",
+                routePath: "/categorie/Orlando City SC",
+              },
+            ],
+          },
+          {
+            id: 3,
+            title: "",
+            menuList: [
+
+
+              {
+                name: "Philadelphia Union",
+                routePath: "/categorie/Philadelphia Union",
+              },
+              {
+                name: "Portland Timbers",
+                routePath: "/categorie/Portland Timbers",
+              },
+              {
+                name: "Real Salt Lake",
+                routePath: "/categorie/Real Salt Lake",
+              },
+              {
+                name: "San Jose Earthquakes",
+                routePath: "/categorie/San Jose Earthquakes",
+              },
+              {
+                name: "Seattle Sounders FC",
+                routePath: "/categorie/Seattle Sounders FC",
+              },
+              {
+                name: "Sporting Kansas City",
+                routePath: "/categorie/Sporting Kansas City",
+              },
+              {
+                name: "St. Louis CITY SC",
+                routePath: "/categorie/St. Louis CITY SC",
+              },
+              {
+                name: "Toronto FC",
+                routePath: "/categorie/Toronto FC",
+              },
+              {
+                name: "St. Louis CITY SC",
+                routePath: "/categorie/Vancouver Whitecaps FC",
               },
             ],
           },

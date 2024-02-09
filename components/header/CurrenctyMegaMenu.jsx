@@ -25,6 +25,8 @@ const CurrenctyMegaMenu = ({ textClass }) => {
     { id: 18, name: "Mexico Peso", currency: "MXN", symbol: "$" },
     { id: 19, name: "Namibia Dollar", currency: "NAD", symbol: "R$" },
     { id: 20, name: "Nepal Rupee", currency: "NPR", symbol: "Nepal Rupee" },
+
+
   ];
 
   const [selectedCurrency, setSelectedCurrency] = useState(currencyContent[0]);
@@ -68,9 +70,8 @@ const CurrenctyMegaMenu = ({ textClass }) => {
           <ul className="modalGrid px-30 py-30 sm:px-15 sm:py-15">
             {currencyContent.map((item) => (
               <li
-                className={`modalGrid__item js-item ${
-                  selectedCurrency.currency === item.currency ? "active" : ""
-                }`}
+                className={`modalGrid__item js-item ${selectedCurrency.currency === item.currency ? "active" : ""
+                  }`}
                 key={item.id}
                 onClick={() => handleItemClick(item)}
               >
