@@ -1,41 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from 'react'
+import axios from 'axios';
+import { format } from 'date-fns';
 
-const SearchBar = () => {
+const SearchBar = ({handleSearch,locationSearchContent}) => {
   const [searchValue, setSearchValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
+  const [loading, setLoading] = useState(false); // Add loading state
+ // const [locationSearchContent, setLocationSearchContent] = useState([]);
 
-  const locationSearchContent = [
-    {
-      id: 1,
-      name: "London",
-      address: "Greater London, United Kingdom",
-    },
-    {
-      id: 2,
-      name: "New York",
-      address: "New York State, United States",
-    },
-    {
-      id: 3,
-      name: "Paris",
-      address: "France",
-    },
-    {
-      id: 4,
-      name: "Madrid",
-      address: "Spain",
-    },
-    {
-      id: 5,
-      name: "Santorini",
-      address: "Greece",
-    },
-  ];
+
 
   const handleOptionClick = (item) => {
     setSearchValue(item.name);
     setSelectedItem(item);
   };
+
+ 
 
   return (
     <>
@@ -46,14 +26,14 @@ const SearchBar = () => {
           data-bs-offset="0,22"
         >
        
-          <div className="text-15 text-light-1 ls-2 lh-16">
+          <div className="text-15 text-light-1 ls-2 lh-16 col-12">
             <input
               autoComplete="off"
               type="search"
               placeholder="What do you want to see live?"
               className="js-search js-dd-focus"
-              value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              
+              onChange={(e) => handleSearch(e.target.value)}
             />
           </div>
         </div>
@@ -62,7 +42,9 @@ const SearchBar = () => {
         <div className="shadow-2 dropdown-menu min-width-400">
           <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
-              {locationSearchContent.map((item) => (
+            {loading && <div className="loader">Loading...</div>}
+              {locationSearchContent.slice(0, 5).map((item) => (
+                
                 <li
                   className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
                     selectedItem && selectedItem.id === item.id ? "active" : ""
@@ -75,11 +57,20 @@ const SearchBar = () => {
                     <div className="icon-location-2 text-light-1 text-20 pt-4" />
                     <div className="ml-10">
                       <div className="text-15 lh-12 fw-500 js-search-option-target">
-                        {item.name}
+                        {item.title}
                       </div>
+                      
                       <div className="text-14 lh-12 text-light-1 mt-5">
-                        {item.address}
-                      </div>
+          {/* Use toLocaleString to format the date and time */}
+          {new Date(item.datetime_local).toLocaleString('en-US', {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true,
+          })}
+        </div>
                     </div>
                   </div>
                 </li>

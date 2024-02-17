@@ -46,15 +46,15 @@ const SearchBar = () => {
           data-bs-offset="0,22"
         >
           <div className="d-flex">
-            <i className="icon-location-2 text-20 text-light-1 mt-5"></i>
+       
 
             <div className="ml-10 flex-grow-1">
-              <h4 className="text-15 fw-500 ls-2 lh-16">Location</h4>
+       
               <div className="text-15 text-light-1 ls-2 lh-16">
                 <input
                   autoComplete="off"
                   type="search"
-                  placeholder="Where are you going?"
+                  placeholder="What do you want to see live?"
                   className="js-search js-dd-focus"
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}

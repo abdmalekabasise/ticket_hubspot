@@ -68,22 +68,11 @@ const GuestSearch = () => {
     setGuestCounts((prevState) => ({ ...prevState, [name]: value }));
   };
   return (
-    <div className="searchMenu-guests px-30 lg:py-20 lg:px-0 js-form-dd js-form-counters position-relative">
+    <div >
     
       {/* End guest */}
 
-      <div className="shadow-2 dropdown-menu min-width-400">
-        <div className="bg-white px-30 py-30 rounded-4 counter-box">
-          {counters.map((counter) => (
-            <Counter
-              key={counter.name}
-              name={counter.name}
-              defaultValue={counter.defaultValue}
-              onCounterChange={handleCounterChange}
-            />
-          ))}
-        </div>
-      </div>
+   
     </div>
   );
 };

@@ -21,8 +21,9 @@ const MainMenu = ({ style = "" }) => {
     <nav className="menu js-navList">
       <ul className={`menu__nav ${style} -is-active`}>
         <li
-          className={`${isActiveParentChaild(homeItems, router.asPath) ? "current" : ""
-            } menu-item-has-children`}
+          className={`${
+            isActiveParentChaild(homeItems, router.asPath) ? "current" : ""
+          } menu-item-has-children`}
         >
           <a href="#">
             <span className="mr-10">Home</span>
@@ -45,10 +46,10 @@ const MainMenu = ({ style = "" }) => {
 
         <li className="menu-item-has-children -has-mega-menu">
           <a href="#">
-            <span className="mr-10">Sport</span>
+            <span className="mr-10">Categories</span>
             <i className="icon icon-chevron-sm-down" />
           </a>
-          <div className="mega" style={{ width: '1000px' }}>
+          <div className="mega">
             <CategoriesMegaMenu />
           </div>
         </li>
@@ -60,8 +61,9 @@ const MainMenu = ({ style = "" }) => {
         {/* End Destinatinos single menu */}
 
         <li
-          className={`${isActiveParentChaild(blogItems, router.asPath) ? "current" : ""
-            } menu-item-has-children`}
+          className={`${
+            isActiveParentChaild(blogItems, router.asPath) ? "current" : ""
+          } menu-item-has-children`}
         >
           <a href="#">
             <span className="mr-10">Blog</span>
@@ -83,8 +85,9 @@ const MainMenu = ({ style = "" }) => {
         {/* End blogIems */}
 
         <li
-          className={`${isActiveParentChaild(pageItems, router.asPath) ? "current" : ""
-            } menu-item-has-children`}
+          className={`${
+            isActiveParentChaild(pageItems, router.asPath) ? "current" : ""
+          } menu-item-has-children`}
         >
           <a href="#">
             <span className="mr-10">Pages</span>
@@ -106,8 +109,9 @@ const MainMenu = ({ style = "" }) => {
         {/* End pages items */}
 
         <li
-          className={`${isActiveParentChaild(dashboardItems, router.asPath) ? "current" : ""
-            } menu-item-has-children`}
+          className={`${
+            isActiveParentChaild(dashboardItems, router.asPath) ? "current" : ""
+          } menu-item-has-children`}
         >
           <a href="#">
             <span className="mr-10">Dashboard</span>

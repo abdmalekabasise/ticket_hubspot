@@ -1,10 +1,11 @@
-const TopHeaderFilter = () => {
+const TopHeaderFilter = (props) => {
+  const { a } = props;
   return (
     <>
       <div className="row y-gap-10 items-center justify-between">
         <div className="col-auto">
           <div className="text-18">
-            <span className="fw-500">3,269 properties</span> in Europe
+            <span className="fw-500">{a} events</span> on all sites
           </div>
         </div>
         {/* End .col */}

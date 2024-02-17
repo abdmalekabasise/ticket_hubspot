@@ -40,7 +40,7 @@ const PopularDestinations = () => {
         {destinations2.map((item) => (
           <SwiperSlide key={item.id}>
             <Link
-              href="/categorie/nhl"
+              href="#"
               className="citiesCard -type-1 d-block rounded-4"
               key={item.id}
             >
