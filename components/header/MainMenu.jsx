@@ -13,6 +13,8 @@ import {
   isActiveParentChaild,
 } from "../../utils/linkActiveChecker";
 import { useRouter } from "next/router";
+import MusicMegaMenu from "./MusicMegaMenu";
+import ShowsMegaMenu from "./ShowsMegaMenu";
 
 const MainMenu = ({ style = "" }) => {
   const router = useRouter();
@@ -50,6 +52,24 @@ const MainMenu = ({ style = "" }) => {
           </a>
           <div className="mega" style={{ width: '1000px' }}>
             <CategoriesMegaMenu />
+          </div>
+        </li>
+        <li className="menu-item-has-children -has-mega-menu">
+          <a href="#">
+            <span className="mr-10">Music</span>
+            <i className="icon icon-chevron-sm-down" />
+          </a>
+          <div className="mega" style={{ width: '1000px' }}>
+            <MusicMegaMenu />
+          </div>
+        </li>
+        <li className="menu-item-has-children -has-mega-menu">
+          <a href="#">
+            <span className="mr-10">Shows</span>
+            <i className="icon icon-chevron-sm-down" />
+          </a>
+          <div className="mega" style={{ width: '1000px' }}>
+            <ShowsMegaMenu />
           </div>
         </li>
         {/* End categories menu items */}

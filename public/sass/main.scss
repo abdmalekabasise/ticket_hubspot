@@ -42,3 +42,9 @@
 @import "./custom/custom-slick";
 @import "./custom/price-range-slider";
 @import "./custom/custom-next";
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -47,9 +47,9 @@ const WishlistTable = (props) => {
         </div>
         {/* End tabs */}
 
-        <div className="tabs__content pt-30 js-tabs-content">
+        <div className="tabs__content pt-30 js-tabs-content" >
           <div className="tabs__pane -tab-item-1 is-tab-el-active">
-            <div className="row y-gap-20">
+            <div className="row y-gap-20" >
               <Properties events={events} />
             </div>
           </div>

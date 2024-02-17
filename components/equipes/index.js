@@ -8,9 +8,9 @@ library.add(fas);
 
 
 
-const Index = () => {
+const Index = ({ id }) => {
 
-    const name = 'mls'
+    const name = id
     const [equipes, setEquipes] = useState(null);
 
     const getEquipes = async (name) => {
@@ -38,7 +38,7 @@ const Index = () => {
 
 
                 >
-                    <Link href={`/nba/${item.name}`} className="destCard -type-1 d-block">
+                    <Link href={`/events/${item.name}`} className="destCard -type-1 d-block">
                         <div className="row x-gap-20 y-gap-20 items-center">
                             <div className="col-auto">
                                 <div className="destCard__image rounded-4">
