@@ -54,7 +54,7 @@ const CategoriesMegaMenu = () => {
                                 : ""
                             }
                           >
-                            <Link href={list.routePath}>{list.name}</Link>
+                            <Link className="truncate" href={list.routePath}>{list.name}</Link>
                           </div>
                         ))}
                       </div>
