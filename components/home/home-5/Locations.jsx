@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { destinations6 } from "../../../data/desinations";
 
-
 const Locations = () => {
   return (
     <>
@@ -12,7 +11,7 @@ const Locations = () => {
           data-aos="fade"
           data-aos-delay={item.delayAnim}
         >
-          <Link href={`/nba/${item.location}`} className="destCard -type-1 d-block">
+          <Link href="/tour/tour-list-v3" className="destCard -type-1 d-block">
             <div className="row x-gap-20 y-gap-20 items-center">
               <div className="col-auto">
                 <div className="destCard__image rounded-4">
@@ -26,7 +25,7 @@ const Locations = () => {
               <div className="col-auto">
                 <div className="text-18 fw-500">{item.location}</div>
                 <div className="text-14 lh-14 text-light-1 mt-5">
-                  {item.properties}
+                  {item.properties} properties
                 </div>
               </div>
             </div>

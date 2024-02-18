@@ -13,24 +13,18 @@ const CategoriesMegaMenu = () => {
   const router = useRouter();
 
   const itemList = [
-    "MLB",
-    "MLS",
-    "NBA",
-    "NFL",
-    "NHL",
-    "WNBA",
-    "NCAA BB",
-    "NCAA FB",
-    "Fighting",
-    "Golf",
-    "Tennis",
-
-
+    "Hotel",
+    "Tour",
+    "Activity",
+    "Holiday Rentals",
+    "Car",
+    "Cruise",
+    "Flights",
   ];
 
   return (
-    <Tabs className="tabs -underline-2 js-tabs" >
-      <TabList className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls" >
+    <Tabs className="tabs -underline-2 js-tabs">
+      <TabList className="tabs__controls row x-gap-40 y-gap-10 lg:x-gap-20 pb-30 js-tabs-controls">
         {itemList.map((item, i) => (
           <Tab className="col-auto" key={i}>
             <button className="tabs__button text-light-1 fw-500 js-tabs-button">

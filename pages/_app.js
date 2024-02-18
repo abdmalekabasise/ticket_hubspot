@@ -9,8 +9,6 @@ import "swiper/css/effect-cards";
 import "aos/dist/aos.css";
 import "../styles/index.scss";
 
-
-
 if (typeof window !== "undefined") {
   require("bootstrap/dist/js/bootstrap");
 }
@@ -25,10 +23,10 @@ export default function App({ Component, pageProps }) {
 
   return (
     <main>
-
-      <Component {...pageProps} />
-      <SrollTop />
-
+ 
+        <Component {...pageProps} />
+        <SrollTop />
+      
     </main>
   );
 }
