@@ -3,7 +3,7 @@ const TopHeaderFilter = () => {
     <>
       <div className="col-auto">
         <div className="text-18">
-          <span className="fw-500">3,269 properties</span> in Europe
+          <span className="fw-300">3,269 properties</span> in Europe
         </div>
       </div>
       {/* End .col */}
@@ -12,7 +12,9 @@ const TopHeaderFilter = () => {
           <i className="icon-up-down text-14 mr-10" />
           Top picks for your search
         </button>
+    
       </div>
+      
       {/* End .col */}
     </>
   );

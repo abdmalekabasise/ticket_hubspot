@@ -1,4 +1,3 @@
-import GoogleMapReact from "google-map-react";
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
@@ -14,12 +13,6 @@ export default function MapPropertyFinder() {
   return (
     // Important! Alwys set the container height explicitlya
 
-    <GoogleMapReact
-      bootstrapURLKeys={{ key: "" }}
-      defaultCenter={defaultProps.center}
-      defaultZoom={defaultProps.zoom}
-    >
-      <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-    </GoogleMapReact>
+    <img src="https://d2o50i5c2dr30a.cloudfront.net/587dd522-62e7-4fc7-9a0a-c83e9bfb20bf.jpg" alt="" />
   );
 }

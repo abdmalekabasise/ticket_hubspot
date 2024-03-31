@@ -38,9 +38,12 @@ const index = () => {
           setLoading(false);
         }
       }
+
+      if(q){
+        fetchData();
+      }
     
       // Call the fetchData function immediately
-      fetchData();
     }, [q]); // Include q in the dependency array so useEffect runs when q changes
  
   return (

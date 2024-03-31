@@ -5,45 +5,74 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import ActivitiesData from "../../../data/activity";
 import Link from "next/link";
-import { ColorRing, Oval, ThreeDots } from 'react-loader-spinner'
+import { ColorRing ,Oval,ThreeDots} from 'react-loader-spinner'
 import axios from 'axios';
+import { useRouter } from 'next/router'
 
-const ActivityProperties = ({ events, q }) => {
-  console.log(q);
-  const [data, setData] = useState();
+const ActivityProperties = ({events , q}) => {
+  const router = useRouter()
 
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [dataStubhub, setDataStubhub] = useState();
+  const [dataVividseats, setDataVividseats] = useState();
 
-
+  const [loadingStubhub, setLoadingStubhub] = useState(true); // Add loading state
+  const [loadingVividseats, setLoadingVividseats] = useState(true); // Add loading state
+console.log(events);
+  
 
   useEffect(() => {
     console.log('hello');
-    async function fetchData() {
+    async function fetchDataStubhub() {
       try {
         // Make your API call using Axios
-        const response = await axios.get(`http://localhost:8000/stubhubSearch/${q}`);
+        const response = await axios.get(`http://localhost:3002/stubhubSearch/${q}`);
         const data = response.data;
         console.log(data);
         // Update data state with the fetched events
-        setData(data);
+        setDataStubhub(data);
       } catch (error) {
         console.error('Error fetching search results:', error);
       } finally {
         // Set loading to false after the API call is complete
-        setLoading(false);
+        setLoadingStubhub(false);
       }
     }
 
+    async function fetchDataVividseats() {
+      try {
+        // Make your API call using Axios
+        const response = await axios.get(`http://localhost:3002/vividseatsSearch/${q}`);
+        const data = response.data;
+        console.log(data);
+        // Update data state with the fetched events
+        setDataVividseats(data);
+      } catch (error) {
+        console.error('Error fetching search results:', error);
+      } finally {
+        // Set loading to false after the API call is complete
+        setLoadingVividseats(false);
+      }
+    }
+  
     // Call the fetchData function immediately
-    fetchData();
+    fetchDataStubhub();
+    fetchDataVividseats()
   }, []);
+
+
+  const handleViewDetails = (date) => {
+
+   const datePart = date.substring(0, 10);
+
+   router.push(`/event/tickets/${q}/${datePart}`)
+  };
   return (
     <>
-      {events?.map((item) => (
+      {events?.map((item,index) => (
         <div
           className="col-12"
           key={item?.id}
-
+    
         >
           <div className="border-top-light pt-20">
             <div className="row x-gap-20 y-gap-10">
@@ -88,54 +117,56 @@ const ActivityProperties = ({ events, q }) => {
                 <h3 className="text-18 lh-16 fw-500">
                   {item?.title}
                   <br />   {new Date(item.datetime_local).toLocaleString('en-US', {
-                    weekday: 'short',
-                    month: 'short',
-                    day: 'numeric',
-                    hour: 'numeric',
-                    minute: 'numeric',
-                    hour12: true,
-                  })}
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true,
+          })}
                 </h3>
-
+               
                 <div className="text-14 lh-15 fw-500 mt-20">
                   {item?.venue?.name_v2} . {item?.venue?.extended_address}
                 </div>
                 <div className="text-14 text-green-2 fw-500 lh-15 mt-5">
-
+          
                 </div>
               </div>
               {/* End .col-md */}
 
               <div className="col-md-auto text-right md:text-left">
-
+                
                 <div className="text-14 text-light-1 mt-50 md:mt-20">From</div>
                 <div className="text-22 lh-12 fw-600 mt-5">
                   US${item?.stats?.lowest_price}
                 </div>
-                {loading ? (
-                  <ThreeDots
-                    visible={true}
-                    height="60"
-                    width="60"
-                    color="#0d2857"
-                    radius="9"
-                    ariaLabel="three-dots-loading"
-                    wrapperStyle={{}}
-                    wrapperClass=""
-                  />
-                ) : (
-                  <Link
-                    href={`/activity-single/${item.id}`}
-                    className="button -md -dark-1 bg-blue-1 text-white mt-24"
-                  >
-                    View Detail <div className="icon-arrow-top-right ml-15" />
-                  </Link>
-                )
-
-                }
-
-
-
+         {/*
+           <ThreeDots
+         visible={true}
+         height="60"
+         width="60"
+         color="#0d2857"
+         radius="9"
+         ariaLabel="three-dots-loading"
+         wrapperStyle={{}}
+         wrapperClass=""
+         />
+         */ }
+       
+              
+                  <button
+                  onClick={() => handleViewDetails(item.datetime_local)}               
+               
+                  className="button -md -dark-1 bg-blue-1 text-white mt-24"
+                >
+                  View Detail <div className="icon-arrow-top-right ml-15" />
+                </button>
+               
+             
+       
+         
+   
               </div>
               {/* End .col-md-auto */}
             </div>

@@ -39,7 +39,7 @@ const HotelProperties = () => {
 
   return (
     <>
-      {hotelsData.slice(0, 12).map((item, index) => (
+      {hotelsData.slice(0, 12).map((item) => (
         <div
           className="col-lg-3 col-sm-6"
           key={item?.id}
@@ -81,21 +81,25 @@ const HotelProperties = () => {
 
                 <div className="cardImage__leftBadge">
                   <div
-                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase ${isTextMatched(item?.tag, "breakfast included")
+                    className={`py-5 px-15 rounded-right-4 text-12 lh-16 fw-500 uppercase ${
+                      isTextMatched(item?.tag, "breakfast included")
                         ? "bg-dark-1 text-white"
                         : ""
-                      } ${isTextMatched(item?.tag, "best seller")
+                    } ${
+                      isTextMatched(item?.tag, "best seller")
                         ? "bg-blue-1 text-white"
                         : ""
-                      } 
-                    } ${isTextMatched(item?.tag, "-25% today")
+                    } 
+                    } ${
+                      isTextMatched(item?.tag, "-25% today")
                         ? "bg-brown-1 text-white"
                         : ""
-                      } 
-                     ${isTextMatched(item?.tag, "top rated")
-                        ? "bg-yellow-1 text-dark-1"
-                        : ""
-                      }`}
+                    } 
+                     ${
+                       isTextMatched(item?.tag, "top rated")
+                         ? "bg-yellow-1 text-dark-1"
+                         : ""
+                     }`}
                   >
                     {item?.tag}
                   </div>
