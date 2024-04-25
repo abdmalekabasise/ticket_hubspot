@@ -14,7 +14,7 @@ import axios from 'axios';
 
 
 
-const index = () => {
+const Index = () => {
     const router = useRouter()
     const { q } = router.query
     const [data, setData] = useState();
@@ -112,4 +112,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

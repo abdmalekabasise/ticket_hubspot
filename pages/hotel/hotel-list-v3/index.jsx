@@ -23,9 +23,7 @@ const index = () => {
         <div className="halfMap__content">
           <MainFilterSearchBox />
 
-          <div className="row x-gap-10 y-gap-10 pt-20">
-            <DropdownSelelctBar />
-          </div>
+          
           {/* End .row */}
 
           <div className="row y-gap-10 justify-between items-center pt-20">
@@ -33,9 +31,7 @@ const index = () => {
           </div>
           {/* End .row */}
 
-          <div className="row y-gap-20 pt-20">
-            <HotelProperties />
-          </div>
+        
           {/* End .row */}
 
           <Pagination />

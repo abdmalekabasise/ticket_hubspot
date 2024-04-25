@@ -12,7 +12,7 @@ import axios from "axios";
 import { ColorRing ,Oval,ThreeDots} from 'react-loader-spinner'
 
 
-const index = () => {
+const Index = () => {
     const router = useRouter()
     const createdat = router.query.createdat;
 
@@ -683,4 +683,4 @@ if (priceA < priceB) {
       );
 };
 
-export default index;
+export default Index;

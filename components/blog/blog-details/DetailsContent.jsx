@@ -15,9 +15,9 @@ const DetailsContent = ({blog}) => {
       {blog.list && blog?.list.map((item) => (
         <><h3 className="text-20 fw-500">{item?.title}</h3>
      {
-      item?.items.map((itm) => (
+      item?.items.map((itm,i) => (
         
-        <li>{itm}</li>
+        <li key={i}>{itm}</li>
         
       ))
      }
