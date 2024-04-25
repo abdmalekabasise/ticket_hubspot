@@ -17,7 +17,7 @@ import SelectFilter from "../../components/hotels/filter-tabs/SelectFilter";
 const Home_1 = () => {
   return (
     <>
-      <Seo pageTitle="Home-1" />
+      <Seo pageTitle="Buy and Sell Tickets: Concerts, Sports & Theater" />
       {/* End Page Title */}
 
       <Header1 />
@@ -31,10 +31,8 @@ const Home_1 = () => {
           <div className="row y-gap-20 justify-between items-end">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Popular Destinations</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  These popular destinations have a lot to offer
-                </p>
+                <h2 className="sectionTitle__title">Categories</h2>
+               
               </div>
             </div>
             {/* End col-auto */}
@@ -44,7 +42,7 @@ const Home_1 = () => {
                 href="#"
                 className="button -md -blue-1 bg-blue-1-05 text-blue-1"
               >
-                View All Destinations
+                View All Categories
                 <div className="icon-arrow-top-right ml-15" />
               </a>
             </div>
@@ -63,115 +61,28 @@ const Home_1 = () => {
       <section className="layout-pt-md layout-pb-md">
         <div className="container">
           <div className="row y-gap-20">
-            <AddBanner />
+
+             {/*  <AddBanner /> */}
+
           </div>
         </div>
         {/* End .container */}
       </section>
       {/* End AddBanner */}
 
-      <section className="layout-pt-md layout-pb-md">
-        <div className="container">
-          <div className="row y-gap-10 justify-between items-end">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Recommended</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-            <div className="col-sm-auto">
-              <SelectFilter />
-            </div>
-          </div>
-          {/* End .row */}
 
-          <div className="relative overflow-hidden pt-40 sm:pt-20 js-section-slider item_gap-x30">
-            <Hotels />
-          </div>
-          {/* End relative */}
-        </div>
-      </section>
       {/* Recommended Properties */}
 
-      <section className="layout-pt-md layout-pb-lg">
-        <div className="container">
-          <div className="row y-gap-20 justify-between">
-            <BlockGuide />
-          </div>
-        </div>
-      </section>
+
       {/* Block Guide Section */}
 
-      <section className="layout-pt-lg layout-pb-lg bg-blue-2">
-        <div className="container">
-          <div className="row y-gap-40 justify-between">
-            <div className="col-xl-5 col-lg-6" data-aos="fade-up">
-              <TestimonialLeftCol />
-            </div>
-            {/* End col */}
 
-            <div className="col-lg-6">
-              <div
-                className="overflow-hidden js-testimonials-slider-3"
-                data-aos="fade-up"
-                data-aos-delay="50"
-              >
-                <Testimonial />
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End container */}
-      </section>
       {/* End testimonial Section */}
 
-      <section className="layout-pt-lg layout-pb-md">
-        <div className="container">
-          <div className="row justify-center text-center">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">
-                  Get inspiration for your next trip
-                </h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row  */}
-          <div className="row y-gap-30 pt-40">
-            <Blog />
-          </div>
-          {/* End .row */}
-        </div>
-        {/* End .container */}
-      </section>
+
       {/* End blog Section */}
 
-      <section className="layout-pt-md layout-pb-lg">
-        <div className="container">
-          <div className="row">
-            <div className="col-auto">
-              <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Destinations we love</h2>
-                <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Interdum et malesuada fames ac ante ipsum
-                </p>
-              </div>
-            </div>
-          </div>
-          {/* End .row */}
 
-          <div className="tabs -pills pt-40 js-tabs">
-            <Destinations />
-          </div>
-          {/* End tabs */}
-        </div>
-      </section>
       {/* End Destination we love Section */}
 
       <CallToActions />

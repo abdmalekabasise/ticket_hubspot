@@ -12,52 +12,10 @@ import { useRouter } from 'next/router'
 const ActivityProperties = ({events , q}) => {
   const router = useRouter()
 
-  const [dataStubhub, setDataStubhub] = useState();
-  const [dataVividseats, setDataVividseats] = useState();
 
-  const [loadingStubhub, setLoadingStubhub] = useState(true); // Add loading state
-  const [loadingVividseats, setLoadingVividseats] = useState(true); // Add loading state
 console.log(events);
   
 
-  useEffect(() => {
-    console.log('hello');
-    async function fetchDataStubhub() {
-      try {
-        // Make your API call using Axios
-        const response = await axios.get(`http://localhost:3002/stubhubSearch/${q}`);
-        const data = response.data;
-        console.log(data);
-        // Update data state with the fetched events
-        setDataStubhub(data);
-      } catch (error) {
-        console.error('Error fetching search results:', error);
-      } finally {
-        // Set loading to false after the API call is complete
-        setLoadingStubhub(false);
-      }
-    }
-
-    async function fetchDataVividseats() {
-      try {
-        // Make your API call using Axios
-        const response = await axios.get(`http://localhost:3002/vividseatsSearch/${q}`);
-        const data = response.data;
-        console.log(data);
-        // Update data state with the fetched events
-        setDataVividseats(data);
-      } catch (error) {
-        console.error('Error fetching search results:', error);
-      } finally {
-        // Set loading to false after the API call is complete
-        setLoadingVividseats(false);
-      }
-    }
-  
-    // Call the fetchData function immediately
-    fetchDataStubhub();
-    fetchDataVividseats()
-  }, []);
 
 
   const handleViewDetails = (date) => {

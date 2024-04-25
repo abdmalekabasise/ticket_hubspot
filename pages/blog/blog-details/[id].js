@@ -61,20 +61,16 @@ const BlogSingleDynamic = () => {
 
           <div className="row y-gap-30 justify-center">
             <div className="col-xl-8 col-lg-10 layout-pt-md">
-              <DetailsContent />
+              <DetailsContent blog={blog}/>
               {/* Details content */}
 
-              <div className="border-top-light border-bottom-light py-30 mt-30">
-                <TopComment />
-              </div>
+            
               {/* End  topcommnet  */}
-              <div className="border-bottom-light py-30">
-                <BlogNavigator />
-              </div>
+           
               {/* End BlogNavigator */}
 
-              <h2 className="text-22 fw-500 mb-15 pt-30">Guest reviews</h2>
-              <Comments />
+           
+           
               {/* End comments components */}
 
               <div className="border-top-light pt-40 mt-40" />

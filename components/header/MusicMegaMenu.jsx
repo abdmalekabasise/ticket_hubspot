@@ -41,9 +41,9 @@ const MusicMegaMenu = () => {
                                         <div className="mega__item" key={item.id}>
                                             <div className="text-15 fw-500">{item.title}</div>
                                             <div className="y-gap-5 text-15 pt-5">
-                                                {item?.menuList?.map((list, i) => (
+                                                {item?.menuList?.map((list, ii) => (
                                                     <div
-                                                        key={i}
+                                                        key={ii}
                                                         className={
                                                             isActiveLink(list.routePath, router.asPath)
                                                                 ? "current"

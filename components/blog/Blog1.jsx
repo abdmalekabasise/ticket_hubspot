@@ -8,7 +8,7 @@ const Blog1 = () => {
   const [filterOption, setFilterOption] = useState("art_culture");
   const filterOptions = [
     { label: "Stubhub.com", value: "art_culture" },
-    { label: "Seatgeak.com", value: "beaches" },
+    { label: "Gametimes.co", value: "beaches" },
     { label: "Vividseats", value: "adventure_travel" },
     { label: "Explore", value: "explore" },
    

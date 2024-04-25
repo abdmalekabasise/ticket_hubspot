@@ -1,21 +1,30 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { format } from 'date-fns';
+import { useRouter } from 'next/router';
 
 const SearchBar = ({handleSearch,locationSearchContent}) => {
+  const router = useRouter();
+
   const [searchValue, setSearchValue] = useState("");
   const [selectedItem, setSelectedItem] = useState(null);
   const [loading, setLoading] = useState(false); // Add loading state
  // const [locationSearchContent, setLocationSearchContent] = useState([]);
 
 
-
   const handleOptionClick = (item) => {
-    setSearchValue(item.name);
-    setSelectedItem(item);
+    console.log(item);
+    const datePart = item.datetime_local.substring(0, 10);
+
+   router.push(`/event/tickets/${searchValue}/${datePart}`)
   };
 
+  const handleInput = (item) => {
+    console.log(item);
+    handleSearch(item)
+    setSearchValue(item);
  
+  };
 
   return (
     <>
@@ -33,7 +42,7 @@ const SearchBar = ({handleSearch,locationSearchContent}) => {
               placeholder="What do you want to see live?"
               className="js-search js-dd-focus"
               
-              onChange={(e) => handleSearch(e.target.value)}
+              onChange={(e) => handleInput(e.target.value)}
             />
           </div>
         </div>
@@ -43,13 +52,13 @@ const SearchBar = ({handleSearch,locationSearchContent}) => {
           <div className="bg-white px-20 py-20 sm:px-0 sm:py-15 rounded-4">
             <ul className="y-gap-5 js-results">
             {loading && <div className="loader">Loading...</div>}
-              {locationSearchContent.slice(0, 5).map((item) => (
+              {locationSearchContent.slice(0, 5).map((item,index) => (
                 
                 <li
                   className={`-link d-block col-12 text-left rounded-4 px-20 py-15 js-search-option mb-1 ${
                     selectedItem && selectedItem.id === item.id ? "active" : ""
                   }`}
-                  key={item.id}
+                  key={index}
                   role="button"
                   onClick={() => handleOptionClick(item)}
                 >

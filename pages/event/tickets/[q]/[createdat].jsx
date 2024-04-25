@@ -9,6 +9,8 @@ import TopHeaderFilter from "../../../../components/activity-list/activity-list-
 import Blog1 from "../../../../components/blog/Blog1";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { ColorRing ,Oval,ThreeDots} from 'react-loader-spinner'
+
 
 const index = () => {
     const router = useRouter()
@@ -50,13 +52,14 @@ const index = () => {
 
     const [sortQ, setSortQ] = useState('asc');
 
+    const [mapUrl, setMapUrl] = useState('');
 
 
     useEffect(() => {
       async function fetchDataStubhub() {
         try {
           // Make your API call using Axios
-          const response = await axios.get(`http://localhost:3002/stubhubSearch/${q}`);
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/stubhubSearch/${q}`);
           const data = response.data;
 
 
@@ -115,7 +118,7 @@ const index = () => {
       async function fetchDataVividseats() {
         try {
           // Make your API call using Axios
-          const response = await axios.get(`http://localhost:3002/vividseatsSearch/${q}`);
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vividseatsSearch/${q}`);
           const data = response.data;
           console.log(data.json.items[1].localDate);
       
@@ -144,7 +147,7 @@ const index = () => {
       async function fetchDataGameTimes() {
         try {
           // Make your API call using Axios
-          const response = await axios.get(`http://localhost:3002/gametimeSearch/${q}`);
+          const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/gametimeSearch/${q}`);
           const data = response.data;
       console.log(data);
             const filteredItems = data.events.filter(item => {
@@ -184,7 +187,7 @@ const index = () => {
         const url = generateURL(filteredItems[0]);
         console.log(url);
         try {
-          const response = await axios.post(`http://localhost:3002/getTicketsGametimes`, { url: `https://gametime.co${url}` });
+          const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/getTicketsGametimes`, { url: `https://gametime.co${url}` });
           const data = response.data;
           setTicketsGameTimes(data.redux.data.listings);
           let item='1';
@@ -252,7 +255,7 @@ const index = () => {
 
           }
   
-            const promise = axios.post(`http://localhost:3002/stubhubSearchTickets`, body);
+            const promise = axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/stubhubSearchTickets`, body);
             promises.push(promise);
           }
   
@@ -289,7 +292,7 @@ const index = () => {
         }
 
           // Make your API call using Axios
-          const response = await axios.post(`http://localhost:3002/stubhubSearchTickets`,body);
+          const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/stubhubSearchTickets`,body);
           const data = response.data;
           console.log(data);
           setTicketsStubhub(data.Items);
@@ -319,10 +322,11 @@ const index = () => {
         const fetchDataTicketsVivid = async (id) => {
           try {
             // Make your API call using Axios
-            const response = await axios.get(`http://localhost:3002/vividseatsSearchTickets/${id}`);
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vividseatsSearchTickets/${id}`);
             const data = response.data;
             const lp=data.global[0].lp;
             const hp=data.global[0].hp;
+            setMapUrl(data.global[0].staticMapUrl)
             setLowPrice(Math.floor(parseInt(lp) * 0.8));
             setHighPrice(Math.floor(parseInt(hp) * 1.2));
             setTicketsVividseats(data.tickets);
@@ -617,22 +621,44 @@ if (priceA < priceB) {
           <section className="halfMap">
             <div className="halfMap__content">
               <h1>{dataStubhub[0]?.name}</h1>
+            {dataStubhub.length>0 && (
+              <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {new Date(dataGameTimes[0]?.event.datetime_local).toLocaleString('en-US', {
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true,
+              })}</h2>
+            )}
             
-            <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {dataStubhub[0]?.formattedRescheduledFromDate}</h2>
            
-            <Blog1 />
+          
               <div className="row x-gap-10 y-gap-10 pt-20">
                 <DropdownSelelctBar handleQuantity={handleQuantity} quantity={quantity} lowPrice={lowPrice} highPrice={highPrice} handlePrice={handlePrice}/>
               </div>
               {/* End .row */}
     
               <div className="row y-gap-10 justify-between items-center pt-20">
-                <TopHeaderFilter numberoftk={mergedData.length} sortPrice={sortPrice}/>
+                <TopHeaderFilter numberoftk={mergedData.length} sortPrice={sortPrice} page={"ticketsPage"}/>
               </div>
               {/* End .row */}
     
               <div className="row y-gap-20 pt-20">
-                <HotelProperties data={mergedData} urlGameTimes={urlGameTimes} urlVividseats={urlVividseats} urlStubhub={urlStubhub} quantity={quantity}/>
+                {loadingSpin ? (
+                  <ColorRing
+                  visible={true}
+                  height="200"
+                  width="200"
+                  ariaLabel="color-ring-loading"
+                  wrapperStyle={{}}
+                  wrapperClass="color-ring-wrapper"
+                  colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                  />
+                ):(
+                  <HotelProperties data={mergedData} urlGameTimes={urlGameTimes} urlVividseats={urlVividseats} urlStubhub={urlStubhub} quantity={quantity}/>
+                )}
+                
               </div>
               {/* End .row */}
                 
@@ -641,9 +667,14 @@ if (priceA < priceB) {
             {/* End .halfMap__content */}
     
             <div className="halfMap__map">
-              <div className="map">
-                <MapPropertyFinder />
-              </div>
+              {
+                mapUrl!='' && (
+                  <div className="map">
+                  <MapPropertyFinder url={mapUrl} />
+                </div>
+                )
+              }
+             
             </div>
             {/* End halfMap__map */}
           </section>

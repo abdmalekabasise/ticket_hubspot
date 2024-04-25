@@ -29,8 +29,8 @@ const Header1 = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <Link href="/" className="header-logo mr-20">
-                  <img src="/img/general/logo-light.svg" alt="logo icon" />
-                  <img src="/img/general/logo-dark.svg" alt="logo icon" />
+                <img src="/img/general/icon_hubspot.jpg" alt="logo icon" style={{width:60,height:60, borderRadius:20}}/>
+
                 </Link>
                 {/* End logo */}
 
@@ -47,46 +47,8 @@ const Header1 = () => {
 
             <div className="col-auto">
               <div className="d-flex items-center">
-                <div className="row x-gap-20 items-center xxl:d-none">
-                  <CurrenctyMegaMenu textClass="text-white" />
-                  {/* End Megamenu for Currencty */}
-
-                  {/* Start vertical devider*/}
-                  <div className="col-auto">
-                    <div className="w-1 h-20 bg-white-20" />
-                  </div>
-                  {/* End vertical devider*/}
-
-                  <LanguageMegaMenu textClass="text-white" />
-                  {/* End Megamenu for Language */}
-                </div>
-                {/* End language and currency selector */}
-
-                {/* Start btn-group */}
-                <div className="d-flex items-center ml-20 is-menu-opened-hide md:d-none">
-                  <Link
-                    href="/others-pages/login"
-                    className="button px-30 fw-400 text-14 -white bg-white h-50 text-dark-1"
-                  >
-                    Become An Expert
-                  </Link>
-                  <Link
-                    href="/others-pages/signup"
-                    className="button px-30 fw-400 text-14 border-white -outline-white h-50 text-white ml-20"
-                  >
-                    Sign In / Register
-                  </Link>
-                </div>
-                {/* End btn-group */}
-
-                {/* Start mobile menu icon */}
                 <div className="d-none xl:d-flex x-gap-20 items-center pl-30 text-white">
-                  <div>
-                    <Link
-                      href="/others-pages/login"
-                      className="d-flex items-center icon-user text-inherit text-22"
-                    />
-                  </div>
+                  
                   <div>
                     <button
                       className="d-flex items-center icon-menu text-inherit text-20"
@@ -103,11 +65,10 @@ const Header1 = () => {
                       data-bs-scroll="true"
                     >
                       <MobileMenu />
-                      {/* End MobileMenu */}
                     </div>
                   </div>
                 </div>
-                {/* End mobile menu icon */}
+            
               </div>
             </div>
             {/* End col-auto */}

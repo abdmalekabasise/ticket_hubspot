@@ -2,8 +2,11 @@ import Image from "next/image";
 import { hotelsData } from "../../../../data/hotels";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const Properties = (props) => {
+  const router = useRouter();
+
   const [tabEvents, setEvents] = useState([])
   const { events } = props;
   useEffect(() => {
@@ -19,6 +22,17 @@ const Properties = (props) => {
     const result = `${formattedDate} ${dayOfWeek} ${formattedTime}`;
     return result;
   }
+
+  function removeParentheses(inputString) {
+    return inputString.replace(/\s*\([^)]*\)/, '');
+}
+
+const handleOptionClick = (item) => {
+  console.log(item);
+  const datePart = item.datetime_local.substring(0, 10);
+
+ router.push(`/event/tickets/${removeParentheses(item.title)}/${datePart}`)
+};
 
   return (
 
@@ -63,7 +77,7 @@ const Properties = (props) => {
               <div className="col-md">
 
                 <div className="d-flex x-gap-5 items-center pt-10">
-                  <h3 className="text-18 lh-14 fw-500">{item?.title}</h3>
+                  <h3 className="text-18 lh-14 fw-500">{removeParentheses(item.title)}</h3>
                 </div>
 
                 <div className="row x-gap-10 y-gap-10 items-center pt-20">
@@ -108,18 +122,23 @@ const Properties = (props) => {
                       </div>
                     </div>
                     <div className="col-auto">
-                      <Link href={'/'}>
-                        <div className="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1">
+                      
+                        <div className="flex-center text-white fw-600 text-14 size-40 rounded-4 bg-blue-1" onClick={() => handleOptionClick(item)} style={{ cursor: 'pointer' }}>
                           <svg width="25px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="#0D0D0D" /><path d="M21.894 11.553C19.736 7.236 15.904 5 12 5c-3.903 0-7.736 2.236-9.894 6.553a1 1 0 0 0 0 .894C4.264 16.764 8.096 19 12 19c3.903 0 7.736-2.236 9.894-6.553a1 1 0 0 0 0-.894zM12 17c-2.969 0-6.002-1.62-7.87-5C5.998 8.62 9.03 7 12 7c2.969 0 6.002 1.62 7.87 5-1.868 3.38-4.901 5-7.87 5z" fill="#0D0D0D" /></svg>
                         </div>
-                      </Link>
+                    
 
                     </div>
                   </div>
-                  <div className="pt-24">
+                  {item.stats.lowest_sg_base_price && (
+                    <div className="pt-24">
                     <div className="fw-500">Starting from        <span className="fw-500 text-blue-1">${item.stats.lowest_sg_base_price}</span></div>
 
-                  </div>
+                    </div>
+                  )
+
+                  }
+                 
                 </div>
               </div>
               {/* End col */}

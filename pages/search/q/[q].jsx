@@ -82,7 +82,7 @@ const index = () => {
             {/* End col */}
 
             <div className="col-xl-9 ">
-              <TopHeaderFilter a={data?.meta?.total} />
+              <TopHeaderFilter numberoftk={data?.meta?.total} page={"searchPage"}/>
               <div className="mt-20"></div>
               {/* End mt--30 */}
               <div className="row y-gap-2">

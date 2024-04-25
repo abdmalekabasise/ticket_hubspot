@@ -20,7 +20,7 @@ const BlogListV2 = () => {
       <DefaultHeader />
       {/* End Header 1 */}
 
-      <LocationTopBar />
+    
       {/* End location top bar section */}
 
       <section className="layout-pt-md">
@@ -28,9 +28,9 @@ const BlogListV2 = () => {
           <div className="row justify-center text-center">
             <div className="col-auto">
               <div className="sectionTitle -md">
-                <h2 className="sectionTitle__title">Travel articles</h2>
+              <h2 className="sectionTitle__title">Blog articles</h2>
                 <p className=" sectionTitle__text mt-5 sm:mt-0">
-                  Lorem ipsum is placeholder text commonly used in site.
+                  Discover insightful articles covering a variety of topics. From practical tips to thought-provoking analyses, our blog has something for everyone.
                 </p>
               </div>
             </div>
@@ -47,12 +47,12 @@ const BlogListV2 = () => {
                 <Blog2 />
               </div>
               {/* End .row */}
-              <BlogPagination />
+     
             </div>
             {/* End .col */}
 
             <div className="col-xl-3">
-              <BlogSidebar />
+             
             </div>
             {/* End .col */}
           </div>

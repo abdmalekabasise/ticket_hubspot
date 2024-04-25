@@ -1,37 +1,33 @@
 module.exports = [
   {
+    id: 4,
+    title: "Categories",
+    menuList: [
+      { name: "Sport", routerPath: "/events/sport" },
+      { name: "Concert", routerPath: "/events/concert" },
+      { name: "Music", routerPath: "/events/music" },
+      { name: "Comedy", routerPath: "/events/comedy" },
+     
+    ],
+  },
+  {
     id: 1,
     title: "Company",
     menuList: [
       { name: "About Us", routerPath: "/" },
-      { name: "Careers", routerPath: "/" },
-      { name: "Blog", routerPath: "/" },
-      { name: "Press", routerPath: "/" },
-      { name: "Gift Cards", routerPath: "/" },
+      { name: "Terms", routerPath: "/others-pages/terms" },
+      { name: "Blog", routerPath: "/blog/blog-list-v2" },
+      
     ],
   },
   {
     id: 2,
     title: "Support",
     menuList: [
-      { name: "Contact", routerPath: "/" },
-      { name: "Legal Notice", routerPath: "/" },
-      { name: "Privacy Policy", routerPath: "/" },
-      { name: "Terms and Conditions", routerPath: "/" },
-      { name: "Sitemap", routerPath: "/" },
+      { name: "Contact page", routerPath: "/contact" },
+  
     ],
   },
-  {
-    id: 3,
-    title: "Other Services",
-    menuList: [
-      { name: "Car hire", routerPath: "/" },
-      { name: "Activity Finder", routerPath: "/" },
-      { name: "Tour List", routerPath: "/" },
-      { name: "Flight finder", routerPath: "/" },
-      { name: "Cruise Ticket", routerPath: "/" },
-      { name: "Holiday Rental", routerPath: "/" },
-      { name: "Travel Agents", routerPath: "/" },
-    ],
-  },
+
+
 ];

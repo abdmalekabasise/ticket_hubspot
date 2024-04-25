@@ -42,18 +42,18 @@ const CategoriesMegaMenu = () => {
       {/* End tab-controls */}
 
       <div className="tabs__content js-tabs-content">
-        {categorieMegaMenuItems.map((megaMenu) => (
-          <TabPanel key={megaMenu.id}>
+        {categorieMegaMenuItems.map((megaMenu,i) => (
+          <TabPanel key={`megaMenu${i}`}>
             {megaMenu?.menuCol?.map((megaCol, i) => (
-              <ul className="mega__content" key={i}>
+              <ul className="mega__content" key={`megaCol${i}`}>
                 <li className="mega__grid">
                   {megaCol?.menuItems?.map((item) => (
                     <div className="mega__item" key={item.id}>
                       <div className="text-15 fw-500">{item.title}</div>
                       <div className="y-gap-5 text-15 pt-5">
-                        {item?.menuList?.map((list, i) => (
+                        {item?.menuList?.map((list, ii) => (
                           <div
-                            key={i}
+                            key={ii}
                             className={
                               isActiveLink(list.routePath, router.asPath)
                                 ? "current"
@@ -69,26 +69,16 @@ const CategoriesMegaMenu = () => {
                 </li>
                 {/* End mega menu list left */}
 
-                <li className="mega__image d-flex relative">
+                <li >
                   <Image
-                    width={270}
-                    height={300}
+                    width={200}
+                    height={200}
                     src={megaCol?.megaBanner}
                     alt="image"
-                    className="rounded-4 js-lazy"
+                    
                   />
 
-                  <div className="absolute w-full h-full px-30 py-24">
-                    <div className="text-22 fw-500 lh-15 text-white">
-                      {megaCol?.title}
-                    </div>
-                    <Link
-                      href={megaCol?.btnRoute}
-                      className="button text-uppercase h-50 px-30 -blue-1 text-dark-1 bg-white mt-20 d-inline-flex"
-                    >
-                      {megaCol?.btnText}
-                    </Link>
-                  </div>
+                 
                 </li>
                 {/* End mega menu right images */}
               </ul>

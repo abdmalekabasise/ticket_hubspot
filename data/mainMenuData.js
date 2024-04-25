@@ -1,57 +1,64 @@
 export const homeItems = [
-  {
-    name: "Home 01",
-    routePath: "/",
-  },
-  {
-    name: "Home 02",
-    routePath: "/home/home_2",
-  },
-  {
-    name: "Home 03",
-    routePath: "/home/home_3",
-  },
-  {
-    name: "Home 04",
-    routePath: "/home/home_4",
-  },
-  {
-    name: "Home 05",
-    routePath: "/home/home_5",
-  },
-  {
-    name: "Home 06",
-    routePath: "/home/home_6",
-  },
-  {
-    name: "Home 07",
-    routePath: "/home/home_7",
-  },
-  {
-    name: "Home 08",
-    routePath: "/home/home_8",
-  },
-  {
-    name: "Home 09",
-    routePath: "/home/home_9",
-  },
-  {
-    name: "Home 10",
-    routePath: "/home/home_10",
-  },
+  "MLB",
+  "MLS",
+  "NBA",
+  "NFL",
+  "NHL",
+  "WNBA",
+  "NCAA BB",
+  "NCAA FB",
+  "Fighting",
+  "Golf",
+  "Tennis",
 ];
 export const blogItems = [
   {
-    name: "Blog List V1",
-    routePath: "/blog/blog-list-v1",
+    name: "Concert",
+    routePath: "/events/concert",
   },
   {
-    name: "Blog List V2",
-    routePath: "/blog/blog-list-v2",
+    name: "Sport",
+    routePath: "/events/sport",
   },
   {
-    name: "Blog Single",
-    routePath: "/blog/blog-details/1",
+    name: "NFL",
+    routePath: "/categorie/NFL",
+  },
+  {
+    name: "MLB",
+    routePath: "/categorie/MLB",
+  },
+  {
+    name: "NBA",
+    routePath: "/categorie/NBA",
+  },
+  {
+    name: "NHL",
+    routePath: "/categorie/NHL",
+  },
+  {
+    name: "MLS",
+    routePath: "/categorie/MLS",
+  },
+  {
+    name: "Broadway",
+    routePath: "/events/Broadway",
+  },
+  {
+    name: "Comedy",
+    routePath: "/events/comedy",
+  },
+  {
+    name: "Tennis",
+    routePath: "/events/tennis",
+  },
+  {
+    name: "Fighting",
+    routePath: "/events/Fighting",
+  },
+  {
+    name: "Golf",
+    routePath: "/events/Golf",
   },
 ];
 export const pageItems = [
@@ -141,7 +148,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/mlb.png",
         title: "Things to do on your hotel",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",
@@ -293,7 +300,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/8.png",
+        megaBanner: "/img/backgrounds/mls.png",
         title: "Things to do on your tour",
         btnText: "See Tour",
         btnRoute: "/tour/tour-list-v1",
@@ -445,7 +452,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/9.png",
+        megaBanner: "/img/backgrounds/nba.webp",
         title: "Things to do on your activity",
         btnText: "See Activity",
         btnRoute: "/activity/activity-list-v1",
@@ -597,7 +604,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/10.png",
+        megaBanner: "/img/backgrounds/nfl.png",
         title: "Things to do on your rentals",
         btnText: "See Rental",
         btnRoute: "/rental/rental-list-v1",
@@ -759,7 +766,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/5.png",
+        megaBanner: "/img/backgrounds/nhl.webp",
         title: "Things to do on your Next Car",
         btnText: "See Car",
         btnRoute: "/car/car-list-v1",
@@ -920,7 +927,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/1.png",
+        megaBanner: "/img/backgrounds/wnba.png",
         title: "Things to do on your Cruise",
         btnText: "See Cruise",
         btnRoute: "/cruise/cruise-list-v1",
@@ -994,7 +1001,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/2.png",
+        megaBanner: "/img/backgrounds/ncabb.png",
         title: "Things to do on your flights",
         btnText: "See Flights",
         btnRoute: "/flight/flight-list-v1",
@@ -1298,7 +1305,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/fighting.jpg",
         title: "Things to do on your hotel",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",
@@ -1339,7 +1346,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/golf.jpeg",
         title: "Things to do on your hotel",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",
@@ -1380,7 +1387,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/tennis.jpg",
         title: "",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",

@@ -47,7 +47,7 @@ export const destinations2 = [
     id: 4,
     hoverText: "",
     city: "NBA",
-    url: "/categorie/nba",
+    url: "/categorie/NBA",
     img: "/img/destinations/1/nba.jpeg",
   },
   {

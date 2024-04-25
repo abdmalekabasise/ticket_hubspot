@@ -5,7 +5,7 @@ import blogsData from "../../data/blogs";
 const Blog2 = () => {
   return (
     <>
-      {blogsData.slice(4, 9).map((item) => (
+      {blogsData.map((item) => (
         <Link
           href={`/blog/blog-details/${item.id}`}
           className="blogCard -type-1 col-12"
