@@ -40,7 +40,6 @@
     "react-slick": "^0.29.0",
     "react-tabs": "^6.0.0",
     "sass": "^1.57.1",
-    "sharp": "^0.33.3",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.7"
   }
