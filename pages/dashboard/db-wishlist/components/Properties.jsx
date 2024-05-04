@@ -83,7 +83,7 @@ const handleOptionClick = (item) => {
                 <div className="row x-gap-10 y-gap-10 items-center pt-20">
                   <div className="col-auto">
                     <p className="text-14">
-                      {item.venue.name} , {item.venue.city} {item.venue.state}
+                      {item.venue.name}, {item.venue.city} {item.venue.state}
                       <button
                         data-x-click="mapFilter"
                         className="text-blue-1 underline ml-10"

@@ -58,7 +58,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
   
                 <div className="col-md">
                   <h3 className="text-16 lh-17 fw-500">
-                  Section {item?.section} , Row {item.row}
+                  Section {item?.section}, Row {item.row}
                 
                   </h3>
   
@@ -130,7 +130,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
   
                 <div className="col-md">
                   <h3 className="text-16 lh-17 fw-500">
-                  Section {item?.d} , Row {item.r}
+                  Section {item?.d}, Row {item.r}
                 
                   </h3>
   
@@ -202,7 +202,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
   
                 <div className="col-md">
                   <h3 className="text-16 lh-17 fw-500">
-                  Section {item?.Section} , Row {item.Row}
+                  Section {item?.Section}, Row {item.Row}
                 
                   </h3>
   

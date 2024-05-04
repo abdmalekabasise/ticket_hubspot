@@ -94,7 +94,7 @@ const Index = () => {
                 
               </div>
               {/* End .row */}
-              <Pagination />
+       
             </div>
             {/* End .col for right content */}
           </div>

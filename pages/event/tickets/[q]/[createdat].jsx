@@ -608,8 +608,12 @@ if (priceA < priceB) {
 
     }
     return (
-        <>
-          <Seo pageTitle="Hotel List v3" />
+        <>{
+          q && (
+<Seo pageTitle={`${q.toUpperCase()} event tickets`} />
+          )
+        }
+          
           {/* End Page Title */}
     
           <div className="header-margin"></div>
@@ -622,14 +626,18 @@ if (priceA < priceB) {
             <div className="halfMap__content">
               <h1>{dataStubhub[0]?.name}</h1>
             {dataStubhub.length>0 && (
-              <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {new Date(dataGameTimes[0]?.event.datetime_local).toLocaleString('en-US', {
-                weekday: 'short',
-                month: 'short',
-                day: 'numeric',
-                hour: 'numeric',
-                minute: 'numeric',
-                hour12: true,
-              })}</h2>
+              <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {
+                new Date(dataVividseats[0]?.localDate.replace(/\[.*?\]/, '')).toLocaleString('en-US', {
+                  weekday: 'short',
+                  month: 'short',
+                  day: 'numeric',
+                  hour: 'numeric',
+                  minute: 'numeric',
+                  hour12: true,
+                  timeZone: 'America/Los_Angeles'
+                })
+              }
+              </h2>
             )}
             
            

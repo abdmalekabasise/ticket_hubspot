@@ -1,0 +1,12 @@
+
+services:
+- type: web
+  name: ticketstubhub
+  runtime: static
+  buildCommand: yarn; yarn build
+  staticPublishPath: out
+  pullRequestPreviewsEnabled: true     # optional
+  envVars:
+  - key: NEXT_PUBLIC_BASE_URL
+    value: https://ticket-hubspot-backend.onrender.com
+

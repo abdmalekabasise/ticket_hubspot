@@ -16,7 +16,7 @@ const NBAPlayerPage = () => {
 
     return (
         <>
-            <Seo pageTitle="Hotel List v5" />
+            <Seo pageTitle={`${id}`} />
             {/* End Page Title */}
 
             <div className="header-margin"></div>
