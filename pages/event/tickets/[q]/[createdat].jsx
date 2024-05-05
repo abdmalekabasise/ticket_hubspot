@@ -118,9 +118,11 @@ const Index = () => {
       async function fetchDataVividseats() {
         try {
           // Make your API call using Axios
+          console.log('fetchDataVividseatsfetchDataVividseatsfetchDataVividseats');
+
           const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vividseatsSearch/${q}`);
           const data = response.data;
-          console.log(data.json.items[1].localDate);
+          console.log(data);
       
             const filteredItems = data.json.items.filter(item => {
               const date = item.localDate.substring(0, 10);
@@ -228,7 +230,7 @@ const Index = () => {
 
     
       // Call the fetchData function immediately
-      if(createdat){
+      if(createdat && q){
         fetchDataStubhub();
         fetchDataVividseats();
         fetchDataGameTimes();
@@ -237,7 +239,7 @@ const Index = () => {
     }, [createdat]);
 
 
-    useEffect(() => {
+    useEffect(() => { 
 
       const fetchData = async (totalPageCount) => {
         try {
@@ -279,7 +281,6 @@ const Index = () => {
           console.error('Error fetching data:', error);
         } finally {
           // Set loading to false after the API call is complete
-          setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
         }
       };
 
@@ -304,6 +305,8 @@ const Index = () => {
         } catch (error) {
           console.error('Error fetching search results:', error);
         } finally {
+          setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
+
           // Set loading to false after the API call is complete
           setLoadingVividseats(false);
           console.log('eeeeeeeennnnnnnnnddd');
@@ -624,8 +627,18 @@ if (priceA < priceB) {
     
           <section className="halfMap">
             <div className="halfMap__content">
-              <h1>{dataStubhub[0]?.name}</h1>
-            {dataStubhub.length>0 && (
+              <h1>
+               {dataStubhub.length> 0 ? (
+                dataStubhub[0]?.name
+               ):(
+                dataVividseats[0]?.name
+               )
+               
+               }
+            
+              
+              </h1>
+            {dataVividseats.length>0 && (
               <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {
                 new Date(dataVividseats[0]?.localDate.replace(/\[.*?\]/, '')).toLocaleString('en-US', {
                   weekday: 'short',
