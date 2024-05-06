@@ -312,8 +312,11 @@ const Index = () => {
           console.log('eeeeeeeennnnnnnnnddd');
         }
       }
-      fetchTicketsStubHub();
-      console.log(dataStubhub);
+      if(dataStubhub.length>0){
+        fetchTicketsStubHub();
+        console.log(dataStubhub);
+      }
+   
 
     }, [dataStubhub]);
 

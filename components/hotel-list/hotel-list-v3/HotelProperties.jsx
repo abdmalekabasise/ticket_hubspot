@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , quantity}) => {
+  console.log(data);
   const handlePriceVividseat = (value) =>{
     // Convert the value to a floating-point number
     const floatValue = parseFloat(value);
