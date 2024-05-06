@@ -362,7 +362,7 @@ const Index = () => {
     
     useEffect(() => {
       console.log(loadingAll);
-      if(loadingAll==3){
+      if(loadingAll>=3){
 
         console.log(loadingAll);
         const array1 = dataFiltredGameTimes;
@@ -610,6 +610,27 @@ if (priceA < priceB) {
   setSortQ(sortQ === 'asc' ? 'desc' : 'asc');
 
     }
+
+    const handledate = (value) => {
+      const dateString = "2024-05-17T20:00:00-07:00[America/Los_Angeles]";
+
+      // Regular expression pattern to match the time zone information
+      const timeZonePattern = /\[(.*?)\]$/;
+      
+      // Use the regular expression to extract the time zone
+      const matches = value.match(timeZonePattern);
+      
+      // Check if a match is found
+      if (matches && matches.length > 1) {
+          const timeZone = matches[1]; // Extract the time zone from the match
+          console.log(timeZone);
+          return timeZone;
+                     // Output: "America/Los_Angeles"
+      } else {
+          console.log("Time zone not found in the string.");
+      }
+    };
+
     return (
         <>{
           q && (
@@ -638,20 +659,21 @@ if (priceA < priceB) {
             
               
               </h1>
-            {dataVividseats.length>0 && (
-              <h2><i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i>  {
-                new Date(dataVividseats[0]?.localDate.replace(/\[.*?\]/, '')).toLocaleString('en-US', {
-                  weekday: 'short',
-                  month: 'short',
-                  day: 'numeric',
-                  hour: 'numeric',
-                  minute: 'numeric',
-                  hour12: true,
-                  timeZone: 'America/Los_Angeles'
-                })
-              }
-              </h2>
-            )}
+              {dataVividseats.length > 0 && (
+    <h2>
+        <i className="icon-calendar-2 text-20 text-dark-1 mt-5"></i> {
+            new Date(dataVividseats[0]?.localDate.replace(/\[.*?\]/, '')).toLocaleString('en-US', {
+                weekday: 'short',
+                month: 'short',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true,
+                timeZone: handledate(dataVividseats[0]?.localDate)
+            })
+        }
+    </h2>
+)}
             
            
           

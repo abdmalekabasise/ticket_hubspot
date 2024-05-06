@@ -29,14 +29,13 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
               item.delivery_type && (
                 <div className="row x-gap-20 y-gap-20">
                 <div className="col-md-auto">
-                  <div className="cardImage  w-230 md:w-1/1 rounded-5">
+                  <div className="cardImage ratio ratio-2:1 w-230  md:w-1/1">
                     <div className="cardImage__content custom_inside-slider">
                      
-                        
                           <SwiperSlide >
                             <Image
-                              width={300}
-                              height={300}
+                              width={200}
+                              height={200}
                               src={item?.view_url}
                               alt="image"
                               className="w-100"
