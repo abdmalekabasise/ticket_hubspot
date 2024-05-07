@@ -14,7 +14,6 @@ module.exports = [
     id: 1,
     title: "Company",
     menuList: [
-      { name: "About Us", routerPath: "/" },
       { name: "Terms", routerPath: "/others-pages/terms" },
       { name: "Blog", routerPath: "/blog/blog-list-v2" },
       
