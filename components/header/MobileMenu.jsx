@@ -96,7 +96,7 @@ const MobileMenu = () => {
                 <Link
                   href="/others-pages/terms"
                   className={
-                    router.pathname === "/contact" ? "menu-active-link" : ""
+                    router.pathname === "/others-pages/terms" ? "menu-active-link" : ""
                   }
                 />
               }

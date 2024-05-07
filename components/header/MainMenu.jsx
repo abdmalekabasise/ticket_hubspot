@@ -80,10 +80,10 @@ const MainMenu = ({ style = "" }) => {
         </li> */ }
         {/* End Destinatinos single menu */}
 
-        <li className={router.pathname === "/contact" ? "current" : ""}>
+        <li className={router.pathname === "/blog/blog-list-v2" ? "current" : ""}>
           <Link href="/blog/blog-list-v2">Blog</Link>
         </li>
-        <li className={router.pathname === "/contact" ? "current" : ""}>
+        <li className={router.pathname === "/others-pages/terms" ? "current" : ""}>
           <Link href="/others-pages/terms">Terms</Link>
         </li>
         {/* End blogIems */}

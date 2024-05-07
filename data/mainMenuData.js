@@ -1434,7 +1434,7 @@ export const musicMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/7.jpg",
         title: "",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",
@@ -1550,7 +1550,7 @@ export const musicMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/8.png",
+        megaBanner: "/img/backgrounds/7.jpg",
         title: "Things to do on your tour",
         btnText: "See Tour",
         btnRoute: "/tour/tour-list-v1",
@@ -1669,7 +1669,7 @@ export const musicMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/9.png",
+        megaBanner: "/img/backgrounds/7.jpg",
         title: "Things to do on your activity",
         btnText: "See Activity",
         btnRoute: "/activity/activity-list-v1",
@@ -1773,7 +1773,7 @@ export const musicMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/10.png",
+        megaBanner: "/img/backgrounds/7.jpg",
         title: "Things to do on your rentals",
         btnText: "See Rental",
         btnRoute: "/rental/rental-list-v1",
@@ -2603,7 +2603,7 @@ export const showsMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: "/img/backgrounds/shows.jpeg",
         title: "",
         btnText: "See Hotel",
         btnRoute: "/hotel/hotel-list-v1",
@@ -2719,7 +2719,7 @@ export const showsMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/8.png",
+        megaBanner: "/img/backgrounds/shows.jpeg",
         title: "Things to do on your tour",
         btnText: "See Tour",
         btnRoute: "/tour/tour-list-v1",
@@ -2838,7 +2838,7 @@ export const showsMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/9.png",
+        megaBanner: "/img/backgrounds/shows.jpeg",
         title: "Things to do on your activity",
         btnText: "See Activity",
         btnRoute: "/activity/activity-list-v1",
@@ -2947,7 +2947,7 @@ export const showsMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/10.png",
+        megaBanner: "/img/backgrounds/shows.jpeg",
         title: "",
         btnText: "See Rental",
         btnRoute: "/rental/rental-list-v1",

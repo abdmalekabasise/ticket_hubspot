@@ -72,12 +72,7 @@ const MusicMegaMenu = () => {
                                         <div className="text-22 fw-500 lh-15 text-white">
                                             {megaCol?.title}
                                         </div>
-                                        <Link
-                                            href={megaCol?.btnRoute}
-                                            className="button text-uppercase h-50 px-30 -blue-1 text-dark-1 bg-white mt-20 d-inline-flex"
-                                        >
-                                            {megaCol?.btnText}
-                                        </Link>
+                                      
                                     </div>
                                 </li>
                                 {/* End mega menu right images */}

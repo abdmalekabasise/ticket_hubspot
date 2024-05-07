@@ -21,7 +21,7 @@ const Contact = () => {
       <DefaultHeader />
       {/* End Header 1 */}
 
-      <LocationTopBar />
+     
       {/* End location top bar section */}
 
       <div className="map-outer">

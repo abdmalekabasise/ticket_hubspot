@@ -22,7 +22,7 @@ const TermsConent = () => {
         <div className="col-lg-9">
         <TabPanel>
             <div className="tabs__content js-tabs-content" data-aos="fade">
-              <h1 className="text-30 fw-600 mb-15">Privacy Policy</h1>
+              <h1 className="text-30 fw-600 mb-15">Terms & Conditions</h1>
               
               <p className="text-15 text-dark-1 mt-5">
               Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the Ticket Hubspot website (the "Service") operated by Ticket Hubspot ("us", "we", or "our").
@@ -159,7 +159,7 @@ const TermsConent = () => {
           </TabPanel>
           <TabPanel>
             <div className="tabs__content js-tabs-content" data-aos="fade">
-              <h1 className="text-30 fw-600 mb-15">Terms & Conditions</h1>
+              <h1 className="text-30 fw-600 mb-15">Privacy Policy</h1>
               
               <p className="text-15 text-dark-1 mt-5">
               Thank you for visiting Ticket Hubspot. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our website and any associated services
