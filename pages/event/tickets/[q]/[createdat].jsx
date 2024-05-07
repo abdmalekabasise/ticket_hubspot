@@ -215,6 +215,7 @@ const Index = () => {
           console.error('Error fetching search results:', error);
         }  finally {
           // Set loading to false after the API call is complete
+          setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
 
         }
           // Update data state with the fetched events
@@ -237,6 +238,48 @@ const Index = () => {
       }
      
     }, [createdat]);
+
+    useEffect(() => {
+      if (dataVividseats[0]?.id !== undefined) {
+        console.log(dataVividseats);
+      
+        const fetchDataTicketsVivid = async (id) => {
+          try {
+            // Make your API call using Axios
+            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vividseatsSearchTickets/${id}`);
+            const data = response.data;
+            const lp=data.global[0].lp;
+            const hp=data.global[0].hp;
+            setMapUrl(data.global[0].staticMapUrl)
+            setLowPrice(Math.floor(parseInt(lp) * 0.8));
+            setHighPrice(Math.floor(parseInt(hp) * 1.2));
+            setTicketsVividseats(data.tickets);
+
+            
+
+            console.log(data);
+
+            function filterVividseats(data) {
+              const filteredArray = data.filter(obj => obj.m.includes(quantity));
+              setDataFiltredVividseats(filteredArray);
+            }
+
+            filterVividseats(data.tickets);
+
+            // Update data state with the fetched events
+          } catch (error) {
+            console.error('Error fetching search results:', error);
+          } finally {
+            // Set loading to false after the API call is complete
+            setLoadingVividseats(false);
+            setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
+
+          }
+        }
+      
+        fetchDataTicketsVivid(dataVividseats[0]?.id);
+      }
+    }, [dataVividseats]);
 
 
     useEffect(() => { 
@@ -280,6 +323,8 @@ const Index = () => {
         } catch (error) {
           console.error('Error fetching data:', error);
         } finally {
+          setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
+
           // Set loading to false after the API call is complete
         }
       };
@@ -321,47 +366,7 @@ const Index = () => {
     }, [dataStubhub]);
 
 
-    useEffect(() => {
-      if (dataVividseats[0]?.id !== undefined) {
-        console.log(dataVividseats);
-      
-        const fetchDataTicketsVivid = async (id) => {
-          try {
-            // Make your API call using Axios
-            const response = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/vividseatsSearchTickets/${id}`);
-            const data = response.data;
-            const lp=data.global[0].lp;
-            const hp=data.global[0].hp;
-            setMapUrl(data.global[0].staticMapUrl)
-            setLowPrice(Math.floor(parseInt(lp) * 0.8));
-            setHighPrice(Math.floor(parseInt(hp) * 1.2));
-            setTicketsVividseats(data.tickets);
 
-            
-
-            console.log(data);
-
-            function filterVividseats(data) {
-              const filteredArray = data.filter(obj => obj.m.includes(quantity));
-              setDataFiltredVividseats(filteredArray);
-            }
-
-            filterVividseats(data.tickets);
-
-            // Update data state with the fetched events
-          } catch (error) {
-            console.error('Error fetching search results:', error);
-          } finally {
-            // Set loading to false after the API call is complete
-            setLoadingVividseats(false);
-            setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
-
-          }
-        }
-      
-        fetchDataTicketsVivid(dataVividseats[0]?.id);
-      }
-    }, [dataVividseats]);
     
     useEffect(() => {
       console.log(loadingAll);
