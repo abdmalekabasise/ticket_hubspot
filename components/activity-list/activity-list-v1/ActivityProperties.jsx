@@ -18,11 +18,11 @@ console.log(events);
 
 
 
-  const handleViewDetails = (date) => {
-
-   const datePart = date.substring(0, 10);
-
-   router.push(`/event/tickets/${q}/${datePart}`)
+  const handleViewDetails = (item) => {
+    console.log(item);
+    const datePart = item.datetime_local.substring(0, 10);
+    const name = item.performers[0].name;
+    router.push(`/event/tickets/${name}/${datePart}`)
   };
   return (
     <>
@@ -114,7 +114,7 @@ console.log(events);
        
               
                   <button
-                  onClick={() => handleViewDetails(item.datetime_local)}               
+                  onClick={() => handleViewDetails(item)}               
                
                   className="button -md -dark-1 bg-blue-1 text-white mt-24"
                 >
