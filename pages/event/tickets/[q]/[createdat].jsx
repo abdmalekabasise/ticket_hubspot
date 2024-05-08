@@ -215,7 +215,7 @@ const Index = () => {
           console.error('Error fetching search results:', error);
         }  finally {
           // Set loading to false after the API call is complete
-          setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
+        //  setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
 
         }
           // Update data state with the fetched events
@@ -225,15 +225,16 @@ const Index = () => {
           // Set loading to false after the API call is complete
           setLoadingVividseats(false);
           setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
-
+          console.log('finaaaaaaaallllllll');
         }
       }
 
     
       // Call the fetchData function immediately
       if(createdat && q){
-        fetchDataStubhub();
         fetchDataVividseats();
+
+        fetchDataStubhub();
         fetchDataGameTimes();
       }
      
@@ -343,7 +344,7 @@ const Index = () => {
           console.log(data);
           setTicketsStubhub(data.Items);
           
-          fetchData(data.NumPages)
+          fetchData(data.NumPages);
 
           // Update data state with the fetched events
         //  setDataVividseats(data);
@@ -360,6 +361,9 @@ const Index = () => {
       if(dataStubhub.length>0){
         fetchTicketsStubHub();
         console.log(dataStubhub);
+      }else{
+        setLoadingAll(prevLoadingAll => prevLoadingAll + 1);
+
       }
    
 

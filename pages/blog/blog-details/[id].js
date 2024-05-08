@@ -36,7 +36,7 @@ const BlogSingleDynamic = () => {
       <DefaultHeader />
       {/* End Header 1 */}
 
-      <LocationTopBar />
+      
       {/* End location top bar section */}
 
       <section className="layout-pt-md layout-pb-md">
