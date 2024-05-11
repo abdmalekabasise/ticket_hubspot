@@ -9,7 +9,7 @@ import TopHeaderFilter from "../../../../components/activity-list/activity-list-
 import Blog1 from "../../../../components/blog/Blog1";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { ColorRing ,Oval,ThreeDots} from 'react-loader-spinner'
+import { ColorRing ,Oval,RotatingLines,ThreeDots} from 'react-loader-spinner'
 
 
 const Index = () => {
@@ -661,10 +661,11 @@ if (priceA < priceB) {
           <section className="halfMap">
             <div className="halfMap__content">
               <h1>
-               {dataStubhub.length> 0 ? (
+               {dataStubhub.length> 0 && dataStubhub.length< 2 ? (
                 dataStubhub[0]?.name
                ):(
                 dataVividseats[0]?.name
+                
                )
                
                }
@@ -711,7 +712,7 @@ if (priceA < priceB) {
                   colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
                   />
                 ):(
-                  <HotelProperties data={mergedData} urlGameTimes={urlGameTimes} urlVividseats={urlVividseats} urlStubhub={urlStubhub} quantity={quantity}/>
+                  <HotelProperties data={mergedData} urlGameTimes={urlGameTimes} urlVividseats={urlVividseats} urlStubhub={urlStubhub} quantity={quantity} mapVivid={mapUrl}/>
                 )}
                 
               </div>
@@ -723,10 +724,23 @@ if (priceA < priceB) {
     
             <div className="halfMap__map">
               {
-                mapUrl!='' && (
+                mapUrl!='' ? (
                   <div className="map">
                   <MapPropertyFinder url={mapUrl} />
                 </div>
+                ):(<div className="map" style={{display:"flex",justifyContent:"center",alignItems:"center"}}>
+                  <RotatingLines
+                    visible={true}
+                    height="50"
+                    width="50"
+                    strokeColor="#000000"
+                    strokeWidth="5"
+                    animationDuration="0.95"
+                    ariaLabel="rotating-lines-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    />
+                  </div>
                 )
               }
              

@@ -4,7 +4,7 @@ import { Navigation, Pagination } from "swiper";
 import Image from "next/image";
 import Link from "next/link";
 
-const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , quantity}) => {
+const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , quantity , mapVivid}) => {
   console.log(data);
   const handlePriceVividseat = (value) =>{
     // Convert the value to a floating-point number
@@ -109,7 +109,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                             <Image
                               width={200}
                               height={200}
-                              src={'https://d2o50i5c2dr30a.cloudfront.net/909d748d-709e-420c-95e8-a6b143385268.jpg'}
+                              src={mapVivid}
                               alt="image"
                               className="w-100"
                             />
