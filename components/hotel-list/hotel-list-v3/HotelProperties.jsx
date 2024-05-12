@@ -33,7 +33,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                   <div className="cardImage ratio ratio-2:1 w-230  md:w-1/1">
                     <div className="cardImage__content custom_inside-slider">
                      
-                          <SwiperSlide >
+                 
                             <Image
                               width={200}
                               height={200}
@@ -41,7 +41,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                               alt="image"
                               className="w-100"
                             />
-                          </SwiperSlide>
+                         
                       
                     
                     </div>
@@ -105,7 +105,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                     <div className="cardImage__content custom_inside-slider">
                      
                         
-                          <SwiperSlide >
+                        
                             <Image
                               width={200}
                               height={200}
@@ -113,7 +113,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                               alt="image"
                               className="w-100"
                             />
-                          </SwiperSlide>
+                        
                       
                     
                     </div>
@@ -177,7 +177,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                     <div className="cardImage__content custom_inside-slider">
                      
                         
-                          <SwiperSlide >
+                    
                             <Image
                               width={200}
                               height={200}
@@ -185,7 +185,7 @@ const HotelProperties = ({data , urlStubhub , urlVividseats , urlGameTimes , qua
                               alt="image"
                               className="w-100"
                             />
-                          </SwiperSlide>
+                    
                       
                     
                     </div>

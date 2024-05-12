@@ -37,26 +37,19 @@ console.log(events);
               <div className="col-md-auto">
                 <div className="cardImage ratio ratio-1:1 w-250 md:w-1/1 rounded-4">
                   <div >
-                    <Swiper
-                      className="mySwiper"
-                      modules={[Pagination, Navigation]}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={true}
-                    >
-                      {item?.performers?.map((slide, i) => (
-                        <SwiperSlide key={i}>
+                   
+                  
+                      
                           <Image
                             width={300}
                             height={300}
-                            className="rounded-4 col-12 js-lazy"
-                            src={slide.image}
+                            className="rounded-4 col-12"
+                            src={item?.performers[0].image}
                             alt="image"
                           />
-                        </SwiperSlide>
-                      ))}
-                    </Swiper>
+                       
+                   
+                 
                   </div>
                   {/* End .cardImage__content */}
 

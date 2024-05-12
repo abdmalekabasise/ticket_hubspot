@@ -665,7 +665,6 @@ if (priceA < priceB) {
                 dataStubhub[0]?.name
                ):(
                 dataVividseats[0]?.name
-                
                )
                
                }
